@@ -1,0 +1,58 @@
+<!--
+  Generated template for the PayslipPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+    <ion-title [ngStyle]="getHeaderStyle()">
+      <h4 class="header-title"> Payment</h4>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content no-bounce class="background-content">
+  <div class="profile-list payslip">
+    <img src="{{blackLogo}}" class="paySlipLogo">
+
+    <div class="earning-box">
+      <h4 class="earn">Payment Recived</h4>
+      <div class="earning-table">
+        <h5>
+          <strong>Payment Date</strong>
+          <span class="pull-right"> {{payment.payment_date}}</span>
+        </h5>
+        <h5>
+          <strong>Transaction ID</strong>
+          <span class="pull-right"> {{payment.transaction_id}}</span>
+        </h5>
+        <h5>
+          <strong>Received From</strong>
+          <span class="pull-right"> {{payment.received_from}}</span>
+        </h5>
+        <h5>
+          <strong>Payment Mode</strong>
+          <span class="pull-right"> {{payment.payment_made}}</span>
+        </h5>
+        <h5>
+          <strong>Currency</strong>
+          <span class="pull-right"> {{payment.currency}}</span>
+        </h5>
+        <h5>
+          <strong>Amount</strong>
+          <span class="pull-right">
+            <strong> {{payment.amount}}</strong>
+          </span>
+        </h5>
+      </div>
+    </div>
+    <p class="others">
+      <strong>Notes</strong></p>
+      <p  class="others-text" [innerHTML]="payment.notes"></p>
+  </div>
+</ion-content>

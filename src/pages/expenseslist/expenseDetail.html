@@ -1,0 +1,52 @@
+<!--
+  Generated template for the PayslipPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+    <ion-title [ngStyle]="getHeaderStyle()">
+      <h4 class="header-title"> Expense</h4>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content no-bounce class="background-content">
+  <div class="profile-list payslip">
+    <img src="{{blackLogo}}" class="paySlipLogo">
+
+    <div class="earning-box">
+      <h4 class="earn">Expense</h4>
+      <div class="earning-table">
+        <h5>
+          <strong>Expense Date</strong>
+          <span class="pull-right"> {{expense.expense_date}}</span>
+        </h5>
+        <h5>
+          <strong>Category</strong>
+          <span class="pull-right"> {{expense.category}}</span>
+        </h5>
+        <h5>
+          <strong>Client</strong>
+          <span class="pull-right"> {{expense.company_name}}</span>
+        </h5>
+        <h5>
+          <strong>Project title</strong>
+          <span class="pull-right"> {{expense.project_title}}</span>
+        </h5>
+        <h5>
+          <strong>Amount</strong>
+          <span class="pull-right"> {{expense.amount}}</span>
+        </h5>
+      </div>
+    </div>
+    <p class="others">
+      <strong>Notes</strong></p>
+      <p  class="others-text">{{expense.notes}}</p>
+  </div>
+</ion-content>

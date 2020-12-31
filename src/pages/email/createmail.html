@@ -1,0 +1,47 @@
+<!--
+  Generated template for the AddLeaveRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu" class="menuIcon"></ion-icon>
+        </button>
+        <ion-title [ngStyle]="getHeaderStyle()">
+            <h4 class="header-title">Company Settings</h4>
+        </ion-title>
+        <div class="notification-div">
+            <div class="notificationIcon send"> Send</div>
+        </div>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content no-bounce padding>
+    <form (ngSubmit)="update()" [formGroup]="mailFrom">
+        <ion-list class="inputLabel">
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>To</ion-label>
+                <ion-input class="addInput" formControlName="to" type="text"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>Cc</ion-label>
+                <ion-input class="addInput" formControlName="cc" type="text"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>Bcc</ion-label>
+                <ion-input class="addInput" formControlName="bcc" type="text"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" floating>Subject</ion-label>
+                <ion-input class="addInput" formControlName="subject" type="text"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+                <ion-label class="addInput-Label" stacked>Message</ion-label>
+                <ion-textarea class="addInput" aria-placeholder="Enter Message Here" formControlName="message" type="text"></ion-textarea>
+            </ion-item>
+        </ion-list>
+    </form>
+</ion-content>

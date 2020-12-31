@@ -1,0 +1,36 @@
+<!--
+  Generated template for the NotificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+    <ion-title [ngStyle]="getHeaderStyle()">
+      <h4 class="header-title">Chats</h4>
+    </ion-title>
+    <div class="notification-div">
+      <ion-icon ios="ios-create" (click)="openContactList()" md="md-create" class="notificationIcon"></ion-icon>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce class="background-content">
+  <div>
+    <ion-list class="noti-list" *ngFor="let message of last_message">
+      <ion-item class="notification-item" (click)="openChat(message)">
+        <ion-avatar item-start>
+          <img *ngIf="message.profile_image" src="{{message.profile_image}}" (error)="setDefaultPic(message)" />
+        </ion-avatar>
+        <h4 class="chat-name">
+          {{ message.fullname }}
+          <span class="chat-time">{{ message.msg_time | date: "h:mm a" }}</span>
+        </h4>
+        <h2 class="chat-text">{{ message.message }}</h2>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+    <ion-title [ngStyle]="getHeaderStyle()">
+      <h4 class="header-title">Calendar</h4>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content no-bounce padding>
+  <ion-list class="inputLabel">
+    <ion-item>
+      <ion-label stacked>Default Date</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" placeholder="Select Date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked> CUSTOM DATE FORMAT</ion-label>
+      <ion-datetime displayformat="DDDD MMM D, YYYY" pickerFormat="DDDD MMM D, YYYY" placeholder="Select Date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Default Time</ion-label>
+      <ion-datetime displayformat="hh:mm A" pickerFormat="hh:mm A" placeholder="Select Time"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Year</ion-label>
+      <ion-datetime displayFormat="YYYY" pickerFormat="YYYY" placeholder="Select Time"></ion-datetime>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="holiday-list" style="margin-top: 20px !important">
+      <ion-calendar #calendar></ion-calendar>
+    </ion-list>
+</ion-content>

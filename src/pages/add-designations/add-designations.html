@@ -1,0 +1,36 @@
+<!--
+  Generated template for the AddDesignationsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+    <ion-title [ngStyle]="getHeaderStyle()">
+      <h4 class="header-title">Add Designation</h4>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce padding>
+  <form (ngSubmit)="addDesignation()" [formGroup]="designationForm">
+    <ion-list class="inputLabel">
+      <ion-item class="inputItem item-leave-height">
+        <ion-label class="addInput-Label" Stacked>Select Department</ion-label>
+        <ion-select interface="action-sheet" placeholder="Select Department" onchange="change()" formControlName="department_id"
+          [(ngModel)]="selectedLeave">
+          <ion-option *ngFor="let dept of departments" [value]="dept.deptid">{{dept.deptname}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>Designation Name</ion-label>
+        <ion-input class="addInput" type="text" formControlName="designation"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button type="submit" [disabled]="!designationForm.valid" [ngStyle]="getHeaderStyle()" class="loginButton"
+      ion-button full>Create Designation</button>
+  </form>
+</ion-content>

@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu" class="menuIcon"></ion-icon>
+      </button>
+      <ion-title  [ngStyle]="getHeaderStyle()">
+        <h4 class="header-title">Video Call</h4>
+      </ion-title>
+      <!-- <img  src="assets/icon/more.png" class="moreIcon">
+      <ion-icon ios="ios-settings" md="md-settings" class="notificationIcon"></ion-icon> -->
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content no-bounce class="voice-call-content">
+    <ion-card class="videocall-details">
+      <div class="user-img">
+        <img class="rounded" alt="" src="https://dreamguys.co.in/dhr/template/assets/img/user.jpg">
+      </div>
+      <div class="call-userinfo">
+        <span class="call-username">Mike Litorus</span>
+        <span class="call-duration">00:59</span>
+      </div>
+      <div class="chat-link" (click)="openChat()">
+        <i class="fa fa-comments-o"></i>
+      </div>
+    </ion-card>
+    <div class="video">
+        <img alt="" class="user-video" src="https://dreamguys.co.in/dhr/template/assets/img/video-call.jpg">
+    </div>
+    <div class="voicecall-users">
+      <ion-list class="users-list">
+        <img src="https://dreamguys.co.in/dhr/template/assets/img/user-05.jpg" class="user-image">
+      </ion-list>
+    </div>
+    <div class="voicecall-options">
+      <div class="voicecall-items">
+        <ion-list class="voicecall-optionslist">
+          <span class="option-icon">
+            <i class="fa fa-video-camera camera"></i>
+          </span>
+        </ion-list>
+        <ion-list class="voicecall-optionslist">
+          <span class="option-icon">
+            <i class="fa fa-microphone microphone"></i>
+          </span>
+        </ion-list>
+        <ion-list class="voicecall-optionslist">
+          <span class="option-icon">
+            <i class="fa fa-user-plus"></i>
+          </span>
+        </ion-list>
+        <ion-list class="voicecall-optionslist">
+          <span class="option-icon">
+            <i class="fa fa-arrows-v full-screen"></i>
+          </span>
+        </ion-list>
+        <ion-list class="voicecall-optionslist" (click)="endCall()">
+          <span class="end-call">
+            <ion-icon ios="ios-call" md="md-call"></ion-icon>
+          </span>
+        </ion-list>
+      </div>
+    </div>
+  </ion-content>

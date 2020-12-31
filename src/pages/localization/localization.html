@@ -1,0 +1,64 @@
+<!--
+  Generated template for the AddLeaveRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+    <ion-title [ngStyle]="getHeaderStyle()">
+      <h4 class="header-title">Company Settings</h4>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="update()" [formGroup]="localizationFrom">
+    <ion-list class="inputLabel">
+      <ion-item class="inputItem item-leave-height">
+        <ion-label class="addInput-Label" stacked>Default Country</ion-label>
+        <ion-select interface="action-sheet" placeholder="Select leave Status" onchange="change()" formControlName="default_country"
+          [(ngModel)]="values.default_country">
+          <ion-option *ngFor="let sta of country" [value]="sta">{{sta}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="inputItem item-leave-height">
+        <ion-label class="addInput-Label" stacked>Date Format</ion-label>
+        <ion-select interface="action-sheet" placeholder="Select leave Status" onchange="change()" formControlName="date_format"
+          [(ngModel)]="values.date_format">
+          <ion-option *ngFor="let sta of date" [value]="sta">{{sta}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="inputItem item-leave-height">
+        <ion-label class="addInput-Label" stacked>TimeZone</ion-label>
+        <ion-select interface="action-sheet" placeholder="Select leave Status" onchange="change()" formControlName="timezone"
+          [(ngModel)]="values.timezone">
+          <ion-option *ngFor="let sta of timezone" [value]="sta">{{sta}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="inputItem item-leave-height">
+        <ion-label class="addInput-Label" stacked>Default Language</ion-label>
+        <ion-select interface="action-sheet" placeholder="Select leave Status" onchange="change()" formControlName="default_language"
+          [(ngModel)]="values.default_language">
+          <ion-option *ngFor="let sta of language" [value]="sta">{{sta}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="inputItem item-leave-height">
+        <ion-label class="addInput-Label" stacked>Currency Code</ion-label>
+        <ion-select interface="action-sheet" placeholder="Select leave Status" onchange="change()" formControlName="currency_code"
+          [(ngModel)]="values.currency_code">
+          <ion-option *ngFor="let sta of currency" [value]="sta">{{sta}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>Currency Symbol</ion-label>
+        <ion-input class="addInput" value="$" formControlName="curency_symbol" type="text" disabled></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <button type="submit" [ngStyle]="getHeaderStyle()" class="loginButton" ion-button full>Save</button>
+  </form>
+</ion-content>

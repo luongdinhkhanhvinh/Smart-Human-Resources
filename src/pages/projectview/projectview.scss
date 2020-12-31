@@ -1,0 +1,66 @@
+page-projectview {
+  .holiday-title {
+    margin-bottom: 0px !important;
+  }
+  .holiday-date {
+    display: inline-block !important;
+  }
+  .holiday-card {
+    margin-bottom: 10px;
+  }
+  .projectview-desc {
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .projectview-description {
+    color: #777 !important;
+    font-size: 14px !important;
+    text-align: justify;
+    padding-right: 20px;
+    white-space: normal !important;
+  }
+  .project-overview {
+    margin-bottom: 20px !important;
+  }
+  .projectview-image {
+    margin: 2px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    border-radius: 25px;
+  }
+  .project-progress {
+    margin-bottom: 5px;
+    color: #000;
+    line-height: 1.4;
+  }
+  .progress-text {
+    float: right;
+  }
+  .add-icon {
+    color: #777 !important;
+    font-size: 24px !important;
+    float: left;
+  }
+  .task-label {
+    margin: 0px !important;
+  }
+
+  .label .label-md {
+    margin:  0px !important;
+  }
+
+  .holiday-card {
+    margin: 13px 8px 13px 0;
+  }
+  .profile-title {
+    font-size: 14px !important;
+  }
+  .profile-inner-item {
+    font-size: 14px !important;
+  }
+  .holiday-list .label-md {
+    margin: 13px 8px 13px 0;
+  }
+}

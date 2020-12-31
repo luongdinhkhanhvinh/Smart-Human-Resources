@@ -1,0 +1,135 @@
+<!--
+  Generated template for the EmployeelistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+    <ion-title [ngStyle]="getHeaderStyle()">
+      <h4 class="header-title"> {{task.task_detail.task_name}} </h4>
+    </ion-title>
+    <div *ngIf="roleId != '3'" class="notification-div">
+      <ion-icon ios="ios-more" md="md-more" (click)="presentPopover($event)" class="notificationIcon"></ion-icon>
+    </div>
+    <div *ngIf="roleId != '3'" class="notification-div">
+      <ion-icon ios="ios-checkmark" md="md-checkmark" (click)="complete()" class="notificationIcon"></ion-icon>
+    </div>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce class="background-content">
+  <!-- <ion-list class="holiday-list" style="margin-top: 20px !important">
+      <ion-item>
+          <h4 class="task-title">Hospital Administration Phase 1</h4>
+          <div class="project-info">
+            <div class="task-assign">
+              <p class="assign">Assigned to</p>
+              <img src="assets/imgs/user.jpg" class="taskview-image">
+              <ion-icon ios="ios-add" md="md-add" class="taskview-add"></ion-icon>
+            </div>
+            <div class="task-duedate">
+                <ion-icon ios="ios-calendar" md="md-calendar" class="task-calander"></ion-icon>
+                <span>Due Date</span>
+            </div>
+          </div>
+      </ion-item>
+  </ion-list> -->
+
+  <ion-list class="profile-list">
+    <ion-item class="profile-item">
+      <div class="holiday-card">
+        <h4 class="holiday-title">Task Details</h4>
+        <!-- <ion-list class="profile-list"> -->
+        <ion-item class="profile-item" style="border-bottom: 1px solid #e7e7e7 !important;">
+          <div class="holiday-card">
+            <h4 class="profile-title">Total Time:</h4>
+            <span class="profile-inner-item">{{task.task_detail.end_time}}</span>
+          </div>
+        </ion-item>
+        <ion-item class="profile-item" style="border-bottom: 1px solid #e7e7e7 !important;">
+          <div class="holiday-card">
+            <h4 class="profile-title">Estimate: </h4>
+            <span class="profile-inner-item">{{task.task_detail.estimated_hours}}hours</span>
+          </div>
+        </ion-item>
+        <ion-item class="profile-item" style="border-bottom: 1px solid #e7e7e7 !important;">
+          <div class="holiday-card">
+            <h4 class="profile-title">Start Date: </h4>
+            <span class="profile-inner-item">{{task.task_detail.start_date}}</span>
+          </div>
+        </ion-item>
+        <ion-item class="profile-item" style="border-bottom: 1px solid #e7e7e7 !important;">
+          <div class="holiday-card">
+            <h4 class="profile-title">End Date:</h4>
+            <span class="profile-inner-item">{{task.task_detail.due_date}}</span>
+          </div>
+        </ion-item>
+        <ion-item class="profile-item" style="border-bottom: 1px solid #e7e7e7 !important;">
+          <div class="holiday-card">
+            <h4 class="profile-title">Created by:</h4>
+            <span class="profile-inner-item">{{task.task_detail.fullname}}</span>
+          </div>
+        </ion-item>
+        <!-- </ion-list> -->
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-list class="profile-list">
+    <ion-item class="profile-item">
+      <div class="holiday-card">
+        <h4 class="holiday-title">Task Description</h4>
+        <!-- <ion-list class="profile-list"> -->
+        <ion-item class="profile-item" style="border-bottom: 1px solid #e7e7e7 !important;">
+          <h4 class="projectview-description" text-wrap> {{task.task_detail.description}}</h4>
+        </ion-item>
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-list class="profile-list">
+    <ion-item class="profile-item">
+      <div class="holiday-card">
+        <h4 class="holiday-title">Task Progress</h4>
+        <!-- <ion-list class="profile-list"> -->
+        <ion-item class="profile-item" style="border-bottom: 1px solid #e7e7e7 !important;">
+          <div class="project-overview">
+            <h4 class="project-progress">Progress &nbsp; </h4>
+            <div class="barWrapper">
+              <div class="progress">
+                <div [ngStyle]="getProgresstyle()" class="progress-bar" [style.width.%]="task.task_detail.task_progress"
+                  id="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" [attr.aria-valuenow]="task.task_detail.task_progress">
+                  <label [ngStyle]="getFontstyle()" for="text" id="tooltip" [attr.data-tip]="task.task_detail.task_progress"
+                    class="has-tip"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ion-item>
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-list class="profile-list">
+    <ion-item class="profile-item">
+      <div class="holiday-card" *ngIf="files">
+        <h4 class="holiday-title">Files Uploaded</h4>
+        <div *ngFor="let files of task.task_files">
+          <ion-item class="profile-item" style="border-bottom: 1px solid #e7e7e7 !important;">
+            <ion-avatar item-start>
+              <img src="{{files.avatar}}" (error)="setDefaultUserPic(files)">
+            </ion-avatar>
+            <h2 class="noti-text"> {{files.file_title}}</h2>
+            <p class="noti-time">{{files.fullname}} &nbsp; &nbsp; <span>{{files.upload_date | date : 'medium'}}</span></p>
+          </ion-item>
+        </div>
+      </div>
+      <div class="holiday-card" *ngIf="!files">
+        <h4 class="holiday-title">Files Uploaded</h4>
+        <h3 class="nolist">No Files Uploaded</h3>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

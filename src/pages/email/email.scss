@@ -1,0 +1,80 @@
+page-email {
+.mail-label{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+.email-title{
+    margin-left: 10px !important;
+    display: inline-block !important;
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    margin-bottom: 5px !important;
+}
+.text-success {
+    color: #55ce63 !important;
+}
+textarea.text-input{
+    border: 2px solid #efefef;
+    height: 75px;
+}
+.send{
+    font-size: 18px !important;
+}
+.chat-time{
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    float: right;
+    padding-right: 10px;
+    white-space: normal !important;
+    color: #8e8e93 !important;
+  }
+  .chat-sub{
+    font-size: 14px;
+    color: black;
+  }
+  .chat-name{
+    display: inline-block !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    width: 100%;
+  }
+  .chat-text{
+    font-size: 15px;
+    color: #8e8e93;
+    white-space: normal !important;
+    line-height: 21px;
+    max-height: 42px;
+  }
+
+ion-item-sliding .item{
+      border-bottom: 2px solid #efefef;
+    }
+    .mail-title {font-weight: 600;margin-bottom: 5px;}
+.sender-img {float: left;margin-right: 10px;width: 40px;}
+.receiver-details {float:left;}
+.sender-name {display: block;}
+.receiver-name {color: #777;}
+.sender-info {display: flex;}
+.mailview-header {border-bottom: 1px solid #e7e7e7;margin-bottom: 10px;padding-bottom: 10px;}
+.mail-time {font-size: 12px;font-weight: bold;}
+.attach-file {color: #777;padding: 10px;text-align: center;}
+.attach-file > i {line-height: 70px;font-size: 40px;}
+.attach-info {background-color: #f4f4f4;padding: 10px;}
+.attach-filename {color: #777 !important;display: block;font-size: 12px;font-weight: bold;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.attach-fileize {font-size: 12px;font-weight: bold;}
+.mail-attachments a {color: #777 !important;font-size: 12px;font-weight: bold;}
+.mailview-inner {font-size: 14px;}
+.attachment-list {border: 1px solid #e7e7e7;margin-bottom: 15px;}
+.toolbar.messagebar {box-shadow: 0 -3px 10px 0 rgba(0, 0, 0, 0.08);}
+.mail-textarea {background-color: #fff;border: none;box-sizing: border-box;color: #444;font-size: 15px;height: 150px;margin: 0;padding: 5px;resize: none;width: 100%;}
+.ios .segmented .button {border-color: #3a57c4;color: #3a57c4;}
+.ios .button.button-active, .ios .button.tab-link-active {background: #3a57c4;color: #fff;}
+.ios .subnavbar {background:#fff;}
+.ios .navbar ~ .page-with-subnavbar:not(.no-navbar) .page-content, .ios .navbar ~ *:not(.no-navbar) .subnavbar ~ * .page-content, .ios .navbar ~ *:not(.no-navbar) .subnavbar ~ .page-content, .ios .page-with-subnavbar .navbar ~ .page-content {padding-top: 104px;}
+.ios .navbar ~ .page-with-subnavbar:not(.no-navbar) .subnavbar, .ios .navbar ~ .subnavbar {top: 60px;}
+
+}

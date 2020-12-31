@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+    <ion-title [ngStyle]="getHeaderStyle()">
+      <h4 class="header-title">Edit Employee</h4>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce padding>
+  <form (ngSubmit)="addEmployee()" [formGroup]="employeeForm">
+    <ion-list class="inputLabel">
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>Full Name</ion-label>
+        <ion-input class="addInput" value={{employee.fullname}} (keyup.enter)="moveFocus(b)" formControlName="fullname" type="text"></ion-input>
+      </ion-item>
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>Username</ion-label>
+        <ion-input class="addInput" #b value={{employee.username}} (keyup.enter)="moveFocus(c)" formControlName="username"
+          type="text" required></ion-input>
+      </ion-item>
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>Phone</ion-label>
+        <ion-input class="addInput" #c value={{employee.phone}} maxlength="15" (keyup.enter)="moveFocus(d)"
+          formControlName="phone" type="tel" required></ion-input>
+      </ion-item>
+
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>Email</ion-label>
+        <ion-input class="addInput" #d value={{employee.email}}  (keyup.enter)="moveFocus(e)" formControlName="email"
+          type="email" required></ion-input>
+      </ion-item>
+    
+      <ion-item class="inputItem item-leave-height">
+          <ion-label class="addInput-Label" floating>Department</ion-label>
+          <ion-input class="addInput" value={{employee.department}} formControlName="department_id"  type="text"></ion-input>
+      </ion-item>
+      <ion-item class="inputItem item-leave-height">
+          <ion-label class="addInput-Label" floating>Designation</ion-label>
+          <ion-input class="addInput" value={{employee.designation}} formControlName="designation_id" type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button type="submit" [ngStyle]="getHeaderStyle()" class="loginButton" ion-button full>Edit Employee</button>
+  </form>
+</ion-content>

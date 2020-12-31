@@ -1,0 +1,88 @@
+<!--
+  Generated template for the NotificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu" class="menuIcon"></ion-icon>
+        </button>
+        <ion-title [ngStyle]="getHeaderStyle()">
+            <h4 class="header-title">Email</h4>
+        </ion-title>
+        <!-- <div class="notification-div">
+            <ion-icon ios="ios-create" (click)="openContactList()" md="md-create" class="notificationIcon"></ion-icon>
+        </div> -->
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce padding>
+    <div class="page-content">
+        <div class="block block-strong">
+            <div class="mailview-header">
+                <div class="mail-title">HRMS Bootstrap Admin Template</div>
+                <div class="sender-info">
+                    <div class="sender-img">
+                        <img width="40" class="rounded" src="assets/imgs/user.jpg" alt="">
+                    </div>
+                    <div class="receiver-details">
+                        <span class="sender-name">John Doe (johnjoe@example.com)</span>
+                        <span class="receiver-name"> to <span>me</span>, <span>Richard</span>, <span>Paul</span> </span>
+                        <div class="mail-received-time">
+                            <span class="mail-time">18 Sep. 2017 9:42 AM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mailview-inner">
+                <p>Hello Richard,</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Thanks,<br>
+                    John Doe</p>
+            </div>
+            <div class="mail-attachments">
+                <p><i class="fa fa-paperclip"></i> 2 Attachments - <a class="pb-standalone" href="#">View all</a> | <a
+                        href="#">Download all</a></p>
+                <div class="row">
+                    <div class="col-100">
+                        <div class="attachment-list">
+                            <div class="attach-file"><img alt="Attachment" src="assets/imgs/placeholder.jpg"></div>
+                            <div class="attach-info"> <a class="attach-filename" href="#">placeholder.png</a>
+                                <div class="attach-fileize"> 17,455 KB</div>
+                            </div>
+                        </div>
+                    </div>
+                    <ion-row style="width: 100%;">
+                    <ion-col>
+                        <div class="attachment-list">
+                            <div class="attach-file"><i class="fa fa-file-pdf-o"></i></div>
+                            <div class="attach-info"> <a class="attach-filename" href="#">daily_meeting.pdf</a>
+                                <div class="attach-fileize"> 842 KB</div>
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="attachment-list">
+                            <div class="attach-file"><i class="fa fa-file-word-o"></i></div>
+                            <div class="attach-info"> <a class="attach-filename" href="#">documentation.docx</a>
+                                <div class="attach-fileize"> 2,305 KB</div>
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,49 @@
+<!--
+  Generated template for the LeaveRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+    <ion-title [ngStyle]="getHeaderStyle()">
+      <h4 class="header-title"> Leaves</h4>
+    </ion-title>
+    <div class="notification-div">
+      <ion-icon ios="ios-add" md="md-add" (click)="addLeave()" class="notificationIcon"></ion-icon>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce class="background-content">
+  <div *ngIf="!noData" class="dashboard-area">
+    <ion-list class="holiday-list" [ngClass]="cssClass" [ngStyle]="{'animation-delay': leave.time + 's'}" style="margin-top: 20px !important"
+      *ngFor="let leave of leaveList">
+      <ion-item-sliding #item >
+        <ion-item (click)="openModal(leave)">
+          <div>
+            <h4 class="holiday-title">{{leave.leave_type}}</h4>
+         
+          </div>
+          <div class="holiday-card">
+            <h4 class="days">{{leave.leave_days}}Days</h4>
+          
+          </div>
+          <div class="holiday-day">
+            <h2 *ngIf="leave.status=='1'" class="leave-status leave-accept-status">Active</h2>
+            <h2 *ngIf="leave.status=='2'" class="leave-status leave-reject-status">Inactive</h2>
+          </div>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="secondary" (click)="editLeave()">Edit</button>
+          <button ion-button color="danger" (click)="deleteLeave()">Delete</button>
+        </ion-item-options>
+      </ion-item-sliding>
+      
+    </ion-list>
+   
+  </div>
+</ion-content>

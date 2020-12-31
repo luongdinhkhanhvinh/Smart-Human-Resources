@@ -1,0 +1,52 @@
+<ion-header>
+
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu" class="menuIcon"></ion-icon>
+      </button>
+      <ion-title [ngStyle]="getHeaderStyle()">
+        <h4 class="header-title"> Leaves</h4>
+      </ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+
+  <ion-content no-bounce>
+        <ion-list class="holiday-list" style="margin-top: 4% !important" >
+            <ion-item>
+              <div>
+                <h4 class="holiday-title">{{leave.fullname}}</h4>
+                <span class="holiday-days-div">
+                  <h2  class="days">{{leave.leave_days}} Days
+                  </h2>
+                </span>
+              </div>
+              <div class="holiday-card">
+                <h4 class="leave-type">{{leave.l_type}}</h4>
+                <h4 class="holiday-date">{{leave.leave_from | date : 'd MMM y'}}</h4>
+              </div>
+              <div class="holiday-day">
+                <h2 *ngIf="leave.status=='0'" class="leave-status">Pending</h2>
+                <h2 *ngIf="leave.status=='1'" class="leave-status leave-accept-status">Accepted</h2>
+                <h2 *ngIf="leave.status=='2'" class="leave-status leave-reject-status">Rejected</h2>
+                <h2 *ngIf="leave.status=='3'" class="leave-status leave-cancel-status">Cancelled</h2>
+              </div>
+            </ion-item>
+          <div class="leave-reason">
+                <p >Reason:</p>
+                <h5 class="leave-request-reason">{{leave.leave_reason}}</h5>
+              </div>
+         
+        </ion-list>
+      </ion-content>
+
+
+  <!--
+  Generated template for the LeaveRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+      

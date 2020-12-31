@@ -1,0 +1,76 @@
+<!--
+  Generated template for the NotificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu" class="menuIcon"></ion-icon>
+        </button>
+        <ion-title [ngStyle]="getHeaderStyle()">
+            <h4 class="header-title">Email</h4>
+        </ion-title>
+        <!-- <div class="notification-div">
+            <ion-icon ios="ios-create" (click)="openContactList()" md="md-create" class="notificationIcon"></ion-icon>
+        </div> -->
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce class="background-content">
+    <ion-list class="noti-list">
+        <ion-item-sliding #item (click)="openChat()">
+            <ion-item class="notification-item">
+                <h4 class="chat-name">GitHub <span class="chat-time">17:14</span></h4>
+                <h5 class="chat-sub">Thanks for verifying your email address</h5>
+                <h2 class="chat-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus
+                    ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales
+                    sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus
+                    feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</h2>
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button color="danger"  >Delete</button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding #item (click)="openChat()">
+            <ion-item class="notification-item">
+                <h4 class="chat-name">John Doe (via Twitter) <span class="chat-time">17:14</span></h4>
+                <h5 class="chat-sub">(no subject)</h5>
+                <h2 class="chat-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus
+                    ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales
+                    sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus
+                    feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</h2>
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button color="danger"  >Delete</button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding #item (click)="openChat()">
+            <ion-item class="notification-item">
+                <h4 class="chat-name">Facebook <span class="chat-time">17:14</span></h4>
+                <h5 class="chat-sub">New messages from John Doe</h5>
+                <h2 class="chat-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus
+                    ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales
+                    sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus
+                    feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</h2>
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button color="danger"  >Delete</button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding #item (click)="openChat()">
+            <ion-item class="notification-item">
+                <h4 class="chat-name">John Doe (via Twitter) <span class="chat-time">17:14</span></h4>
+                <h5 class="chat-sub">John Doe (@_johndoe) mentioned you on Twitter!</h5>
+                <h2 class="chat-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus
+                    ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales
+                    sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus
+                    feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</h2>
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button color="danger"  >Delete</button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>

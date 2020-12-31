@@ -1,0 +1,54 @@
+<!--
+  Generated template for the AddLeaveRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+    <ion-title [ngStyle]="getHeaderStyle()">
+      <h4 class="header-title">Salary Settings</h4>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce padding>
+  <form (ngSubmit)="update()" [formGroup]="salaryFrom">
+    <ion-list class="inputLabel">
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>DA (%)</ion-label>
+        <ion-input class="addInput" formControlName="da" type="text"></ion-input>
+      </ion-item>
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>HRA (%)</ion-label>
+        <ion-input class="addInput" formControlName="hra" type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+    <h2 class="block-title">PROVIDENT FUND SETTINGS</h2>
+    <ion-list class="inputLabel">
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>Employee Share (%)</ion-label>
+        <ion-input class="addInput" formControlName="employee_share_pf" type="text"></ion-input>
+      </ion-item>
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>Organization Share (%)</ion-label>
+        <ion-input class="addInput" formControlName="organization_share_pf" type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+    <h2 class="block-title">ESI SETTINGS</h2>
+    <ion-list class="inputLabel">
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>Employee Share (%)</ion-label>
+        <ion-input class="addInput" formControlName="employee_share_esi" type="text"></ion-input>
+      </ion-item>
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>Organization Share (%)</ion-label>
+        <ion-input class="addInput" formControlName="organization_share_esi" type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button type="submit" [ngStyle]="getHeaderStyle()" class="loginButton" ion-button full>Save</button>
+  </form>
+</ion-content>

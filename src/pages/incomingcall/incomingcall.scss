@@ -1,0 +1,13 @@
+page-incomingcall {
+    @media screen and (orientation:landscape) { 
+        .voicecall-options{
+            bottom: 0;
+            left: 0;
+            padding: 15px;
+            position: relative;
+            right: 0;
+            text-align: center;
+            z-index: 99;
+        }
+     }
+}

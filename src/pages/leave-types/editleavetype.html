@@ -1,0 +1,42 @@
+<!--
+  Generated template for the AddLeaveRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu" class="menuIcon"></ion-icon>
+      </button>
+      <ion-title [ngStyle]="getHeaderStyle()">
+        <h4 class="header-title">Edit Leave Type</h4>
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content no-bounce padding>
+    <form (ngSubmit)="addLeavetype()" [formGroup]="leaveFrom">
+      <ion-list class="inputLabel">
+        <ion-item class="inputItem">
+          <ion-label class="addInput-Label" floating>Leave Type</ion-label>
+          <ion-input class="addInput" formControlName="leave_type" value={{leave.leave_type}} type="text"></ion-input>
+        </ion-item>
+        <ion-item class="inputItem">
+            <ion-label class="addInput-Label" floating>Days</ion-label>
+            <ion-input class="addInput" formControlName="days" value={{leave.days}} type="text"></ion-input>
+          </ion-item>
+      <ion-item class="inputItem item-leave-height">
+        <ion-label class="addInput-Label" stacked>Select Leave Type</ion-label>
+        <ion-select interface="action-sheet" placeholder="Select leave Status" onchange="change()" formControlName="status"
+          [(ngModel)]="leave.status">
+          <ion-option *ngFor="let sta of status" [value]="sta">{{sta}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+      <button type="submit" [ngStyle]="getHeaderStyle()" class="loginButton"
+        ion-button full>Add
+        Leave Type</button>
+    </form>
+  </ion-content>

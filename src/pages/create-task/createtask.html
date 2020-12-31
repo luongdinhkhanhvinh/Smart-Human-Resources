@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
+    </button>
+    <ion-title [ngStyle]="getHeaderStyle()">
+      <h4 class="header-title">Create Task</h4>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce padding>
+  <form (ngSubmit)="createtask()" [formGroup]="projectForm">
+    <ion-list class="inputLabel">
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>Task Title</ion-label>
+        <ion-input class="addInput" #b (keyup.enter)="moveFocus(c)" formControlName="task_name" type="text" required></ion-input>
+      </ion-item>
+      <ion-item class="inputItem item-leave-height">
+        <ion-label class="addInput-Label" floating>Assign To</ion-label>
+        <ion-input class="addInput" #b (keyup.enter)="moveFocus(c)" formControlName="assigned_to" type="text" required></ion-input>
+        <!-- <ion-select interface="action-sheet" placeholder="Assign To" formControlName="assigned_to" multiple="true">
+          <ion-option *ngFor="let lead of projectDetails.leads" [value]="lead.value">{{lead.label}}</ion-option>
+        </ion-select> -->
+      </ion-item>
+      <ion-item class="inputItem item-leave-height">
+        <ion-label>Start Date</ion-label>
+        <ion-datetime displayFormat="MMM DD YYYY" min="{{currentTime}}" max="{{year+5}}" formControlName="start_date"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="start" class="inputItem item-leave-height">
+        <ion-label>Due Date</ion-label>
+        <ion-datetime displayFormat="MMM DD YYYY" min="{{proDateFrom}}" max="{{year+5}}" formControlName="due_date"></ion-datetime>
+      </ion-item>
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>Estimate Hours</ion-label>
+        <ion-input class="addInput" (keyup.enter)="moveFocus()" formControlName="estimate" type="text" required></ion-input>
+      </ion-item>
+      <ion-item class="inputItem">
+        <ion-label class="addInput-Label" floating>Description</ion-label>
+        <ion-input class="addInput" (keyup.enter)="moveFocus()" formControlName="description" type="text" required></ion-input>
+      </ion-item>
+      <ion-item class="inputItem item-leave-height">
+        <ion-label class="addInput-Label" stacked>Visible to client</ion-label>
+        <ion-toggle [(ngModel)]="fixed" formControlName="visible"></ion-toggle>
+      </ion-item>
+    </ion-list>
+    <button type="submit" [ngStyle]="getHeaderStyle()" class="loginButton" ion-button full>Create Task</button>
+  </form>
+</ion-content>
